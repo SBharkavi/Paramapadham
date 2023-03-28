@@ -19,9 +19,6 @@ var msg = new SpeechSynthesisUtterance();
 const StartBTN = document.querySelector('.btn--start');
 const PlayBTN = document.querySelector('.btn--play')
 const replayBtn=document.querySelector('.btn--again');
-const endBtn=document.querySelector(".btn--end");
-const HomePG = document.getElementById('home');
-const PlayPG = document.getElementById('play');
 
 
 
@@ -85,7 +82,7 @@ roll.addEventListener('click', function () {
         const otherscore = document.getElementById(`score--${unactivePlayer}`).textContent;
         score = document.getElementById(`score--${activePlayer}`).textContent;
         steps = die1 + die2;//3+2
-       // steps = 100//3+2       
+        //steps = 100//3+2       
         currentpos = Number(score);//5
         target = currentpos + steps;//10
         switch (target) {
@@ -181,7 +178,7 @@ const PlayGame =()=>{
     player1=document.querySelector('#pname1').value;
     if(player0===''||player1===''){
         alert("Please, provide your nickname pls with minimum of 4 letters and maximum of 10 letters");
-    }else if(!((player0.length>=4)&&(player0.length<=10))||!((player0.length>=4)&&(player1.length<=10))){
+    }else if(!((player0.length>=4)&&(player0.length<=100))||!((player0.length>=4)&&(player1.length<=10))){
         alert("You should fill the name minimum of 4 letters and maximum of 10 letters");
     }else{
         //2. Go to next page to play
@@ -198,6 +195,8 @@ const PlayGame =()=>{
 
     }
  }
+
+ PlayBTN.addEventListener('click',PlayGame)
 
 
 
@@ -218,9 +217,10 @@ const moveCoinDefault=()=>{
 
 
 newgame.addEventListener('click',()=>{
-    document.getElementById('color_box').appendChild(document.getElementById(`coin--0`))
-    document.getElementById('color_box').appendChild(document.getElementById(`coin--1`))
+    document.getElementById('coin').appendChild(document.getElementById(`coin--0`))
+    document.getElementById('coin').appendChild(document.getElementById(`coin--1`))
     init()
+
 });
 
 
@@ -232,22 +232,20 @@ StartBTN.addEventListener('click',()=>{
     document.getElementById('play').classList.remove("hidden");
 });
 
-// replayBtn.addEventListener("click",()=>{
-//     document.querySelector('#winner-name').textContent=``;
-//     moveCoinDefault();
-//     winnerModal.classList.add('hidden');
-//     winnerOverlay.classList.add('hidden');
-//     document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
-//     init(); 
-//     player0=document.querySelector('#pname0').value;
-//     player1=document.querySelector('#pname1').value;
-//     playerNames.push(player0,player1);
-// })
+replayBtn.addEventListener('click',()=>{
+    document.querySelector('#winner-name').textContent=``;
+    winnerModal.classList.add('hidden');
+    winnerOverlay.classList.add('hidden');
+    document.querySelector(`.player--${activePlayer}`).classList.remove('player--active'); 
+    player0=document.querySelector('#pname0').value;
+    player1=document.querySelector('#pname1').value;
+    playerNames.push(player0,player1);
+    document.getElementById('coin').appendChild(document.getElementById(`coin--0`))
+    document.getElementById('coin').appendChild(document.getElementById(`coin--1`))
+    init();
 
+}
 
-
-
- PlayBTN.addEventListener('click',PlayGame)
-
+)
 
 
