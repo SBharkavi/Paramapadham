@@ -248,6 +248,6 @@ StartBTN.addEventListener('click',()=>{
 
 
  PlayBTN.addEventListener('click',PlayGame)
- replayBtn.addEventListener('click',newgame)
+
 
 
