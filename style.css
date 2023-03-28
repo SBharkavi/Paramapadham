@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 80vh;
+  color: #333;
+ /* background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);*/
+ background-image: url(images/bg1.jpg);
+  display: flex;
+}
+
+/* STARTING PAGE */
+
+.homeBG {
+  position: absolute;
+  left: 50%;
+  width:800px;
+  transform: translateX(-50%);
+  height: 500px;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--start {
+  top: 40rem;
+}
+.btn--name {
+  top: 3rem;
+}
+
+btn--play {
+  top:40rem;
+}
+
+/*-----------------*/
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 70rem;
+  height: 60rem;
+  top: 100px;
+  left:0px;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(231, 220, 220, 0.066);
+  border-radius: 0px;
+  overflow: hidden;
+  display: flex;
+}
+
+
+.player {
+  flex: 10%;
+  padding: 9rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* ELEMENTS */
+.name {
+  position: relative;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: #c7365f;
+  margin-bottom: auto;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+  font-weight: 700;
+}
+.player--active .score {
+  font-weight: 400;
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn--new {
+  top: 4rem;
+}
+.btn--roll {
+  top: 39.3rem;
+}
+
+
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 16.5rem;
+  transform: translateX(-50%);
+  height: 40px;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+.hidden {
+  display: none;
+}
+
+
+* sub {
+        
+        display: grid;
+        place-items: right;
+        overflow: hidden;
+        width: 700px;
+        height: 700px;
+        right:500px;
+        
+      }
+
+.cont {
+    display: grid;
+    width: 600px;
+    grid-template-columns: repeat(10, 1fr);
+    margin: 100px 0px 0px 0px;
+    background-image:url("images/board.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+   /* margin: 20px 20 0px 0;*/
+    
+  }
+  
+.cont div {
+    width: 60px;
+    height: 60px;
+    border: 0.2px solid black;
+   /* place-items: left;*/
+  }
+
+  #title-bg {
+    width:400px;
+    height:300px;
+    border: radius 9px;;
+  }
+
+  #player-bg {
+    width:300px;
+    height:200px;
+    top:150px;
+  }
+
+
+  /*------------------------ player name field---------------------------------*/
+
+  .get-name{
+    position:relative;
+    align-items: center;
+    justify-content: center;
+    padding:2rem 5rem;
+    overflow: hidden;
+    left:510px;
+    top:350px;
+    width:500px;
+}
+.name-panel{
+    background-color: #302c2c;
+    position: relative;
+    padding: 15px;
+    margin-top: 10px;
+    width:100%;
+    border-radius: 1rem;
+}
+.name-field{
+    font-family: inherit;
+    width: 100%;
+    height:20%;
+    border:0;
+    border-bottom:2px solid  #ffff04;
+    outline:0;
+    font-size:1.8rem; 
+    color:#fff;
+    padding:7px 0;
+    background: transparent;
+    transition:border-color 0.2s;
+}
+.name-label{
+    position:absolute;
+    top:2px;
+    display:block;
+    transition:0.1s;
+    font-size:1.5rem;
+    color:rgba(216, 216, 172, 0.801);
+}
+.name-field:placeholder-shown~.name-label{
+    font-size:1.5rem;
+    cursor:text;
+    top:20px;
+}
+.name-field::placeholder{
+    color:transparent;
+}
+.name-field:focus~.name-label{
+    position:absolute;
+    top:7px;;
+    display:block;
+    transition: 0.2s;
+    font-size: 1.5rem;
+    color: #11998e;
+    font-weight:700;  
+}
+.name-field:focus{
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #4ff08d);
+    border-image-slice: 1;
+}
+.name-field:required,.name-field:invalid{
+    box-shadow:none;
+}
+
+
+/*------------------------------*/
+
+/* Overlay */
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 5;
+}
+/* Overlay modal */
+.modal{
+  position:absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition:all linear 0.5s;
+  padding: 1rem;
+}
+#winner-modal{
+  width: 40%;
+  background-color: #0c0152;
+  background-image: linear-gradient(315deg, #746ab6 0%, #9e141d 74%);
+  border:5px solid #fdf57d;
+  border-radius: 6px;
+  font-size:medium;
+  box-shadow: 0 3rem 5rem rgb(252, 231, 97);
+  z-index: 10;
+}
+#winner{
+  text-align: center;
+  font-size: 2.5rem;
+  color:#f0fff1;
+  padding:0px 0px;
+}
+#winner-name{
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 5rem;
+  color:#c9ffcd;
+}
+.emoji{
+  font-size: larger;
+}
+
+.btn-final{
+  position:relative;
+  padding: 1.2rem 2rem;
+  bottom:-25px;
+  border:5px solid #fdf57d;
+  border-radius:1.5rem;
+  background-color: #238636;
+  color:#ffffff;
+  font-size: large;
+}
+.btn--end{
+ float:left;
+ left:13%;
+} 
+.btn--again{
+ padding:1.3rem 2rem;
+ float:right;
+ left:40px;
+}
+
