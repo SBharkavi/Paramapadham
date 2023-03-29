@@ -33,7 +33,7 @@ ladderUp.playbackRate=6;
 
 
 
-let activePlayer, unactivePlayer, playing,currentpos,steps,target,die1,die2,score,player0,player1,playerNames;
+let activePlayer, inactivePlayer, playing,currentpos,steps,target,die1,die2,score,player0,player1,playerNames;
 
 
 // play function 
@@ -42,7 +42,7 @@ const init = function () {
     
     dice1.classList.add('hidden');
     dice2.classList.add('hidden');
-    unactivePlayer = 1
+    inactivePlayer = 1
     playerNames=[];
     sc0.textContent = 0;
     sc1.textContent = 0;
@@ -78,11 +78,11 @@ roll.addEventListener('click', function () {
     rollSound.play()
     if (playing) {
         rollDice()
-        unactivePlayer = activePlayer === 0 ? 1 : 0;
-        const otherscore = document.getElementById(`score--${unactivePlayer}`).textContent;
+        inactivePlayer = activePlayer === 0 ? 1 : 0;
+        const otherscore = document.getElementById(`score--${inactivePlayer}`).textContent;
         score = document.getElementById(`score--${activePlayer}`).textContent;
-        steps = die1 + die2;//3+2
-        //steps = 100//3+2       
+        //steps = die1 + die2;//3+2
+        steps = 100//3+2       
         currentpos = Number(score);//5
         target = currentpos + steps;//10
         switch (target) {
@@ -128,7 +128,7 @@ roll.addEventListener('click', function () {
             player1El.classList.toggle('player--active');
         }
         else
-            document.getElementById(`score--${unactivePlayer}`).textContent = 0;
+            document.getElementById(`score--${inactivePlayer}`).textContent = 0;
 
     }
 });
@@ -159,9 +159,6 @@ const winner = function(){
     document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
     winning.play()
     document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
- //   document.querySelector("#winner-name").textContent = currentWinner;
- //   document.getElementById("winner overlay").classList.remove("hidden")
- //   document.getElementById("winner-model").classList.remove("hidden")
     msg.text = `congratulations ${playerNames[activePlayer]} you are the winner` ;
     window.speechSynthesis.speak(msg);
 
@@ -177,18 +174,18 @@ const PlayGame =()=>{
     player0=document.querySelector('#pname0').value;
     player1=document.querySelector('#pname1').value;
     if(player0===''||player1===''){
-        alert("Please, provide your nickname pls with minimum of 4 letters and maximum of 10 letters");
-    }else if(!((player0.length>=4)&&(player0.length<=100))||!((player0.length>=4)&&(player1.length<=10))){
-        alert("You should fill the name minimum of 4 letters and maximum of 10 letters");
+        alert("Please, enter your name");
+    }else if(!(((player0.length<=20))||!(player1.length<=20))){
+        alert("You should fill the name maximum of 20 letters");
     }else{
         //2. Go to next page to play
         init();
         playerNames.push(player0,player1);
         console.log(playerNames)
         playerName0El.textContent=playerNames[activePlayer];
-        playerName1El.textContent=playerNames[unactivePlayer];
-        console.log(playerName0El.textContent,playerName1El.textContent,playerNames[unactivePlayer])
-        document.getElementById('begin').style.visibility = "hidden"
+        playerName1El.textContent=playerNames[inactivePlayer];
+        console.log(playerName0El.textContent,playerName1El.textContent,playerNames[inactivePlayer])
+        document.getElementById('begin').style.visibility = "hidden";
         document.getElementById('play').classList.add("hidden");
         document.getElementById('main').classList.remove("hidden");
         document.getElementById('sub').classList.remove("hidden");
@@ -202,17 +199,12 @@ const PlayGame =()=>{
 
 
 const movecoin = function(targetpos,presentCoin){
-    console.log(document.getElementById(`b${target}`),(document.getElementById(`coin--${activePlayer}`)))
+    // console.log(document.getElementById(`b${target}`),(document.getElementById(`coin--${activePlayer}`)))
     document.getElementById(targetpos).appendChild(document.getElementById(presentCoin))
     
 }
 
 
-// Move coin to default positions
-const moveCoinDefault=()=>{
-    document.getElementsByClassName('coin')[0].appendChild(coinP0);
-    document.getElementsByClassName('coin')[2].appendChild(coinP1);
-}
 
 
 
@@ -244,8 +236,10 @@ replayBtn.addEventListener('click',()=>{
     document.getElementById('coin').appendChild(document.getElementById(`coin--1`))
     init();
 
-}
+});
 
-)
+
+
+
 
 

@@ -17,7 +17,7 @@ body {
   height: 80vh;
   color: #333;
  /* background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);*/
- background-image: url(images/bg1.jpg);
+  background-image: url(images/snake-bg.jpg);
   display: flex;
 }
 
@@ -26,7 +26,7 @@ body {
 .homeBG {
   position: absolute;
   left: 50%;
-  width:800px;
+  width:100%;
   transform: translateX(-50%);
   height: 500px;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
@@ -35,11 +35,8 @@ body {
 .btn--start {
   top: 40rem;
 }
-.btn--name {
-  top: 3rem;
-}
 
-btn--play {
+.btn--play {
   top:40rem;
 }
 
@@ -52,6 +49,7 @@ main {
   height: 60rem;
   top: 100px;
   left:0px;
+  background-image: url(images/bg1.jpg);
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
@@ -60,6 +58,7 @@ main {
   overflow: hidden;
   display: flex;
 }
+
 
 
 .player {
@@ -79,6 +78,7 @@ main {
   letter-spacing: 1px;
   word-spacing: 2px;
   font-weight: 300;
+  color: white;
   margin-bottom: 1rem;
 }
 
@@ -108,7 +108,7 @@ main {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: #444;
+  color: whitesmoke;
   background: none;
   border: none;
   font-family: inherit;
@@ -117,9 +117,7 @@ main {
   cursor: pointer;
   font-weight: 400;
   transition: all 0.2s;
-
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-image:url(images/btn-bg2.jpg);
   backdrop-filter: blur(10px);
 
   padding: 0.7rem 2.5rem;
@@ -229,7 +227,8 @@ main {
     width:500px;
 }
 .name-panel{
-    background-color: #302c2c;
+    /* background-color: #302c2c; */
+    background-image: url(images/bg1.jpg);
     position: relative;
     padding: 15px;
     margin-top: 10px;
@@ -241,10 +240,10 @@ main {
     width: 100%;
     height:20%;
     border:0;
-    border-bottom:2px solid  #ffff04;
+    border-bottom:2px solid wheat;
     outline:0;
-    font-size:1.8rem; 
-    color:#fff;
+    font-size:1.6rem; 
+    color:wheat;
     padding:7px 0;
     background: transparent;
     transition:border-color 0.2s;
@@ -255,7 +254,7 @@ main {
     display:block;
     transition:0.1s;
     font-size:1.5rem;
-    color:rgba(216, 216, 172, 0.801);
+    color:wheat;
 }
 .name-field:placeholder-shown~.name-label{
     font-size:1.5rem;
@@ -271,14 +270,14 @@ main {
     display:block;
     transition: 0.2s;
     font-size: 1.5rem;
-    color: #11998e;
+    color: #ccdddc;
     font-weight:700;  
 }
 .name-field:focus{
     padding-bottom: 6px;  
     font-weight: 700;
     border-width: 3px;
-    border-image: linear-gradient(to right, #11998e, #4ff08d);
+    border-image: linear-gradient(to right, #dee6e5, #7e8581);
     border-image-slice: 1;
 }
 .name-field:required,.name-field:invalid{
@@ -311,7 +310,8 @@ main {
 #winner-modal{
   width: 40%;
   background-color: #0c0152;
-  background-image: linear-gradient(315deg, #746ab6 0%, #9e141d 74%);
+  /* background-image: linear-gradient(315deg, #746ab6 0%, #9e141d 74%); */
+  background-image: url(images/winner-bg.jpg);
   border:5px solid #fdf57d;
   border-radius: 6px;
   font-size:medium;
@@ -330,27 +330,44 @@ main {
   font-size: 5rem;
   color:#c9ffcd;
 }
-.emoji{
-  font-size: larger;
-}
-
 .btn-final{
   position:relative;
   padding: 1.2rem 2rem;
   bottom:-25px;
   border:5px solid #fdf57d;
-  border-radius:1.5rem;
-  background-color: #238636;
+  border-radius:1rem;
+  /* background-color: #238636; */
+  background-image: url(images/button-bg.jpg);
   color:#ffffff;
   font-size: large;
 }
 .btn--end{
  float:left;
  left:13%;
+ background-image: url(images/button-bg.jpg);
 } 
 .btn--again{
  padding:1.3rem 2rem;
  float:right;
  left:40px;
+ background-image: url(images/button-bg.jpg);
 }
+
+
+/* ---------------------------------------------------------- */
+
+/* #title-text{
+  text-align: center;
+  font-size: 7rem;
+  color:#f0fff1;
+  padding:200px 630px;
+  font-family: cinzel;
+
+}
+
+#title-text{
+  z-index:10;  
+  text-align: center;
+  top:200px;
+} */
 
