@@ -13,7 +13,8 @@ var msg = new SpeechSynthesisUtterance();
 const StartBTN = document.querySelector('.btn--start');
 const EditName = document.querySelector('.btn--name');
 const PlayBTN = document.querySelector('.btn--play')
-// name variable
+// const BackBTN = document.getElementById('#btn-back')
+// // name variable
 let nameP1 = "Player 1";
 let nameP2 = "Player 1";
 
@@ -179,11 +180,4 @@ newgame.addEventListener('click',()=>{
 });
 
 
-// home page
-
-StartBTN.addEventListener('click',()=>{
-    
-}
-
-)
 

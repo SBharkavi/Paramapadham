@@ -17,7 +17,7 @@
     <button class="btn btn--start" id="start" style="top:500px;"> ▶ Let's Start</button>
     </div>
 
-    <div class="hidden" id="play">
+    <div class="play hidden" id="play">
     <img src="images/download.png" alt="Playing dice" class="homeBG" id="player-bg" style="border:radius 400px;"/>
     <div class="get-name">
       <section class="name-panel">
@@ -57,7 +57,9 @@
     </h2>
   </div> -->
 
-
+<!-- <div class="btn-back hidden" id="btn-back">
+  <button onclick="history.go(-1)"><img src="images/btn-close.png" style="width:80px;height:80px;" onclick="history.go(-1)"></button>
+</div> -->
 
     <main id="main" class="hidden">
       <section class="player player--0 player--active">
@@ -80,6 +82,7 @@
     </main>
 
 <sub id="sub" class="hidden" style="margin:0%;">
+  <!-- <button style="width: 50%;height: 50px;"><img src="images/close.png"</button> -->
     <div class="cont">
 
         <div class="box" id="b100"></div>
@@ -187,6 +190,11 @@
 
 
 </sub>
+
+<!-- <div>
+  <button class="hidden" id="btn-close" style="background-color: black;" onclick="history.go(0)"><img src="images/end-bg.png" style="width:60px;height:60px;align-items: end;"></button>
+</div> -->
+
     <script src="dm.js"></script>
   </body>
 </html>

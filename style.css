@@ -26,7 +26,7 @@ body {
 .homeBG {
   position: absolute;
   left: 50%;
-  width:100%;
+  width: 1000px;
   transform: translateX(-50%);
   height: 500px;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
@@ -48,7 +48,7 @@ main {
   width: 70rem;
   height: 60rem;
   top: 100px;
-  left:0px;
+  left:50px;
   background-image: url(images/bg1.jpg);
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
@@ -186,7 +186,7 @@ main {
     display: grid;
     width: 600px;
     grid-template-columns: repeat(10, 1fr);
-    margin: 100px 0px 0px 0px;
+    margin: 100px 0px 0px 50px;
     background-image:url("images/board.png") ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -352,6 +352,24 @@ main {
  left:40px;
  background-image: url(images/button-bg.jpg);
 }
+
+
+#btn-close {
+  transition: all 0.2s;
+  background-color: bl;
+  align-items: end;
+  backdrop-filter: blur(10px);
+  /* left:300px; */
+}
+#btn-back {
+ left:500px;
+}
+
+/* .btn-close{
+  right:100px;
+  width:100px;
+  height:50px;
+} */
 
 
 /* ---------------------------------------------------------- */

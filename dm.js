@@ -20,6 +20,12 @@ const StartBTN = document.querySelector('.btn--start');
 const PlayBTN = document.querySelector('.btn--play')
 const replayBtn=document.querySelector('.btn--again');
 
+const HomePage = document.querySelector('.home');
+const NamePage = document.querySelector('.play');
+const MainPage = document.getElementById('#main');
+
+
+
 
 
 //sound
@@ -81,8 +87,8 @@ roll.addEventListener('click', function () {
         inactivePlayer = activePlayer === 0 ? 1 : 0;
         const otherscore = document.getElementById(`score--${inactivePlayer}`).textContent;
         score = document.getElementById(`score--${activePlayer}`).textContent;
-        //steps = die1 + die2;//3+2
-        steps = 100//3+2       
+        steps = die1 + die2;//3+2
+        //steps = 100//3+2       
         currentpos = Number(score);//5
         target = currentpos + steps;//10
         switch (target) {
@@ -189,6 +195,8 @@ const PlayGame =()=>{
         document.getElementById('play').classList.add("hidden");
         document.getElementById('main').classList.remove("hidden");
         document.getElementById('sub').classList.remove("hidden");
+        document.getElementById('btn-close').classList.remove("hidden");
+        document.getElementById('btn-back').classList.remove("hidden");
 
     }
  }
